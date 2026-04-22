@@ -1,4 +1,5 @@
 def game(counter):
+    
     import random
     score_user = 0
     score_bot = 0
