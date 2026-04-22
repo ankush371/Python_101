@@ -11,9 +11,7 @@ def madlibs():
     verb_infinitive = input("Enter a verb (infinitive, e.g., to run, to hack): ")
     anime_character = input("Enter an anime character's name: ")
     emotion = input("Enter an emotion: ")
-    
-        
-        
+          
         
     story = (
             f"In a highly {adjective1} near-future, society relies entirely on a massive {tech_buzzword} "
@@ -53,20 +51,14 @@ def madlibs():
     )
         
       
-
     stories = [story,story_1, story_2, story_3, story_4, story_5]
     final_story = random.choice(stories)  
         
-    print("\n" + "="*60)
+    print("\n" + "="*100)
     print(" YOUR GENERATED STORY ")
-    print("="*60)
+    print("="*100)
     print(final_story)
-    print("="*60 + "\n")
-    
-    
-    
-    
-
+    print("="*100 + "\n")
 
 if __name__ == "__main__":
     madlibs()

@@ -5,7 +5,7 @@ The **Mad Libs Generator** is a fun, interactive terminal-based application that
 
 ## How to Run
 ```bash
-python mad_libs.py
+python main.py
 ```
 
 ## Python Basics Used in This Project
@@ -110,7 +110,7 @@ if __name__ == "__main__":
 ## Project Structure
 ```
 Mad_Libs_Generator/
-├── mad_libs.py      # Main program file
+├── main.py      # Main program file
 └── README.md        # This file
 ```
 

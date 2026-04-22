@@ -6,7 +6,7 @@ A simple Python script that converts a JSON file containing an array of objects 
 
 ```
 json_to_csv/
-├── json_to_csv.py   # Main script
+├── main.py   # Main script
 ├── data.json        # Sample input file
 ├── output.csv       # Generated output file
 └── README.md
@@ -22,7 +22,7 @@ The script reads a JSON file, extracts the `people` array, uses the keys of the 
 2. Run the script:
 
 ```bash
-python json_to_csv.py
+python main.py
 ```
 
 3. The output CSV will be saved to `path/to/output.csv`
