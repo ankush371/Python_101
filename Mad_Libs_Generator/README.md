@@ -3,6 +3,13 @@
 ## Overview
 The **Mad Libs Generator** is a fun, interactive terminal-based application that creates engaging stories by incorporating user-provided words into pre-written story templates. The program randomly selects from multiple story variations to generate a unique narrative each time it's executed.
 
+## Project Structure
+```
+Mad_Libs_Generator/
+├── main.py      # Main program file
+└── README.md        # This file
+```
+
 ## How to Run
 ```bash
 python main.py
@@ -107,12 +114,7 @@ if __name__ == "__main__":
 
 ---
 
-## Project Structure
-```
-Mad_Libs_Generator/
-├── main.py      # Main program file
-└── README.md        # This file
-```
+
 
 ## Requirements
 - Python 3.6 or higher (for f-string support)
