@@ -3,102 +3,24 @@
 ## Overview
 **Todo List** is an interactive command-line application that helps you manage your daily tasks. Add, mark tasks as complete, delete tasks, and automatically save everything to a JSON file. Your tasks persist between sessions, so you never lose your to-do list!
 
-## Features
-- **Add Tasks**: Quickly add new tasks to your to-do list
-- **Mark Complete**: Check off tasks as you complete them
-- **Delete Tasks**: Remove tasks you no longer need
-- **Persistent Storage**: All tasks are saved to a JSON file automatically
-- **Clean Interface**: Well-formatted display with task status indicators
-- **User-Friendly**: Simple menu-driven interface
-- **Data Validation**: Ensures task numbers and inputs are valid
 
 ## How to Run
 ```bash
 python main.py
 ```
 
-The application will:
-1. Load your existing tasks from `todo.json` (or start fresh if empty)
-2. Display your current to-do list
-3. Show a menu with options (Add, Done, Delete, Quit)
-4. Let you manage your tasks interactively
-5. Automatically save changes to the JSON file
-
-## Example Usage
-```
-====================================================================================================
-       MY TO-DO LIST
-====================================================================================================
- Nothing to do! You're all caught up.
-====================================================================================================
-
-Commands: [1] Add  [2] Done  [3] Delete  [4] Quit
-Select an option: 1
-Enter the new task: Buy groceries
-
- Added: 'Buy groceries'
-
-====================================================================================================
-       MY TO-DO LIST
-====================================================================================================
- 1. [ ] Buy groceries
-====================================================================================================
-
-Commands: [1] Add  [2] Done  [3] Delete  [4] Quit
-Select an option: 1
-Enter the new task: Finish homework
-
- Added: 'Finish homework'
-
-====================================================================================================
-       MY TO-DO LIST
-====================================================================================================
- 1. [ ] Buy groceries
- 2. [ ] Finish homework
-====================================================================================================
-
-Commands: [1] Add  [2] Done  [3] Delete  [4] Quit
-Select an option: 2
-Enter task number to mark done: 1
-
- Task marked as complete!
-
-====================================================================================================
-       MY TO-DO LIST
-====================================================================================================
- 1. [x] Buy groceries
- 2. [ ] Finish homework
-====================================================================================================
-
-Commands: [1] Add  [2] Done  [3] Delete  [4] Quit
-Select an option: 4
-
-Saving your tasks... Goodbye!
-```
-
----
-
 ## Python Basics Used in This Project
 
-### 1. **Import Statements**
+### 1. **Module-Level Constants**
 ```python
-import json
-import os
-```
-- `json`: Handles reading/writing JSON data files
-- `os`: Provides file system operations (checking if file exists)
-- **Concept**: Standard library modules for file handling
-
-### 2. **Module-Level Constants**
-```python
-DATA_FILE = "C:\\Documents\\Desktop\\Main_projects\\sample_project\\Python basic projects\\Todo_list\\todo.json"
+DATA_FILE = "path\\todo.json"
 ```
 - Defines a constant file path used throughout the program
 - Uses uppercase naming convention for constants
 - Avoids hardcoding paths in multiple places
 - **Concept**: Constants and code maintainability
 
-### 3. **File Path with Escape Characters**
+### 2. **File Path with Escape Characters**
 ```python
 DATA_FILE = "C:\\Documents\\Desktop\\...\\.json"
 ```
@@ -106,7 +28,7 @@ DATA_FILE = "C:\\Documents\\Desktop\\...\\.json"
 - Necessary for Windows file paths in Python
 - **Concept**: String escape sequences
 
-### 4. **Function Definition**
+### 3. **Function Definition**
 ```python
 def load_tasks():
 def save_tasks(tasks):
@@ -118,7 +40,7 @@ def main():
 - Functions are reusable and testable
 - **Concept**: Function design and modularity
 
-### 5. **Try/Except Block (Exception Handling)**
+### 4. **Try/Except Block (Exception Handling)**
 ```python
 try:
     with open(DATA_FILE, 'r') as file:
@@ -131,7 +53,7 @@ except json.JSONDecodeError:
 - Prevents program crash from corrupted data
 - **Concept**: Error handling and robustness
 
-### 6. **Conditional Statement - File Existence Check**
+### 5. **Conditional Statement - File Existence Check**
 ```python
 if os.path.exists(DATA_FILE):
 ```
@@ -140,7 +62,7 @@ if os.path.exists(DATA_FILE):
 - Prevents errors from trying to open non-existent files
 - **Concept**: File system operations and conditionals
 
-### 7. **Context Manager - With Statement**
+### 6. **Context Manager - With Statement**
 ```python
 with open(DATA_FILE, 'r') as file:
     return json.load(file)
@@ -150,7 +72,7 @@ with open(DATA_FILE, 'r') as file:
 - More reliable than manual `file.close()`
 - **Concept**: Resource management and context managers
 
-### 8. **JSON Module - load() Function**
+### 7. **JSON Module - load() Function**
 ```python
 return json.load(file)
 ```
@@ -160,7 +82,7 @@ return json.load(file)
 - JSON objects `{}` become Python dictionaries
 - **Concept**: JSON parsing and data serialization
 
-### 9. **JSON Module - dump() Function**
+### 8. **JSON Module - dump() Function**
 ```python
 json.dump(tasks, file, indent=4)
 ```
@@ -169,7 +91,7 @@ json.dump(tasks, file, indent=4)
 - Automatically converts Python types to JSON
 - **Concept**: JSON serialization and formatting
 
-### 10. **Lists and List Methods**
+### 9. **Lists and List Methods**
 ```python
 return []
 tasks.append({"description": new_task_desc, "done": False})
@@ -180,7 +102,7 @@ removed_task = tasks.pop(task_num - 1)
 - `.pop()`: Removes and returns item at index
 - **Concept**: Lists, methods, and data structures
 
-### 11. **Dictionaries**
+### 10. **Dictionaries**
 ```python
 {"description": new_task_desc, "done": False}
 task['description']
@@ -192,7 +114,7 @@ task['done'] = True
 - Can modify dictionary values
 - **Concept**: Dictionaries and key-value data structures
 
-### 12. **For Loop with enumerate()**
+### 11. **For Loop with enumerate()**
 ```python
 for index, task in enumerate(tasks, start=1):
     status = "[x]" if task['done'] else "[ ]"
@@ -203,7 +125,7 @@ for index, task in enumerate(tasks, start=1):
 - Unpacks tuple into `index` and `task`
 - **Concept**: Iteration, enumerate, and unpacking
 
-### 13. **Ternary Conditional Expression**
+### 12. **Ternary Conditional Expression**
 ```python
 status = "[x]" if task['done'] else "[ ]"
 ```
@@ -212,38 +134,8 @@ status = "[x]" if task['done'] else "[ ]"
 - Makes code concise and readable
 - **Concept**: Conditional expressions and ternary operators
 
-### 14. **F-String Formatting**
-```python
-print(f" {index}. {status} {task['description']}")
-print(f"\n Added: '{new_task_desc}'")
-```
-- Embeds variables and expressions in strings
-- `{index}`, `{status}`, `{task['description']}` are replaced with values
-- **Concept**: String formatting and interpolation
 
-### 15. **Input Function and String Methods**
-```python
-choice = input("Select an option: ").strip()
-new_task_desc = input("Enter the new task: ").strip()
-```
-- `input()`: Gets user input as string
-- `.strip()`: Removes leading/trailing whitespace
-- Prevents issues with accidental spaces
-- **Concept**: User input and string methods
-
-### 16. **While True Loop (Infinite Loop)**
-```python
-while True:
-    # menu and options
-    if condition:
-        break  # exit loop when user quits
-```
-- `while True`: Creates infinite loop
-- Continues until `break` statement is encountered
-- Perfect for interactive menu-driven applications
-- **Concept**: Loop control and break statement
-
-### 17. **Match Statement (Pattern Matching) - Python 3.10+**
+### 13. **Match Statement (Pattern Matching) - Python 3.10+**
 ```python
 match choice:
     case '1':
@@ -263,40 +155,9 @@ match choice:
 - `case _`: Default case (matches anything)
 - **Concept**: Pattern matching and switch-like logic
 
-### 18. **Type Conversion - int()**
-```python
-task_num = int(input("Enter task number to delete: "))
-```
-- Converts user input string to integer
-- Necessary because `input()` always returns string
-- Used for numeric comparisons and list indexing
-- **Concept**: Type conversion and casting
 
-### 19. **Try/Except for Input Validation**
-```python
-try:
-    task_num = int(input("Enter task number to delete: "))
-except ValueError:
-    print("\n Please enter a valid number.")
-```
-- `try`: Attempts to convert input to integer
-- `except ValueError`: Catches error if input isn't a number
-- Validates user input without crashing
-- **Concept**: Input validation and error handling
 
-### 20. **Range Checking with Comparison Operators**
-```python
-if 1 <= task_num <= len(tasks):
-    # Valid task number
-else:
-    # Invalid task number
-```
-- `<=`: Less than or equal to
-- Checks if task number is within valid range
-- `len(tasks)`: Gets number of tasks in list
-- **Concept**: Range validation and compound comparisons
-
-### 21. **List Indexing and Index Offset**
+### 14. **List Indexing and Index Offset**
 ```python
 tasks[task_num - 1]['done'] = True
 removed_task = tasks.pop(task_num - 1)
@@ -306,7 +167,7 @@ removed_task = tasks.pop(task_num - 1)
 - `-1` converts user's 1-based number to 0-based index
 - **Concept**: Indexing, offsets, and array access
 
-### 22. **Conditional Data Validation**
+### 15. **Conditional Data Validation**
 ```python
 if new_task_desc:
     # Add task
@@ -318,34 +179,7 @@ else:
 - Prevents adding empty tasks
 - **Concept**: Truthy/falsy values and validation
 
-### 23. **String Escape Sequences**
-```python
-print("\n" + "="*100)
-```
-- `\n`: Newline character
-- `\\`: Backslash character
-- Makes output more readable and visually organized
-- **Concept**: Escape sequences and special characters
 
-### 24. **String Multiplication**
-```python
-print("="*100)
-```
-- Repeats string 100 times
-- Creates visual separator lines
-- **Concept**: String operations
-
-### 25. **Main Block Guard Clause**
-```python
-if __name__ == "__main__":
-    main()
-```
-- Code only runs when script is executed directly
-- Not run if script is imported as a module
-- Best practice for Python scripts
-- **Concept**: Script execution control
-
----
 
 ## Data Structure: Task Format
 
@@ -396,13 +230,6 @@ All tasks are stored in a JSON array:
 
 ---
 
-## File Structure
-```
-Todo_list/
-├── main.py          # Main application file
-├── todo.json        # Persistent task storage (auto-created)
-└── README.md        # This file
-```
 
 ## Requirements
 - Python 3.10 or higher (for `match` statement support)
@@ -415,43 +242,6 @@ Todo_list/
 - **[3] Delete**: Remove a task from the list
 - **[4] Quit**: Exit the application (you can also type `q` or `quit`)
 
-## Tips
-- Tasks are numbered starting from 1 (not 0)
-- Completed tasks show with `[x]`, incomplete show with `[ ]`
-- Tasks are automatically saved to `todo.json` after each change
-- The application creates `todo.json` automatically if it doesn't exist
-- If `todo.json` is corrupted, it's safely handled and starts fresh
-
-## Error Handling
-- **Empty JSON file**: Handled gracefully, starts with empty list
-- **Invalid task number**: Shows error message and asks for retry
-- **Non-numeric input**: Caught with try/except, user prompted again
-- **Empty task description**: Validation prevents adding empty tasks
-
-## Learning Outcomes
-This project demonstrates:
-- File I/O and JSON handling
-- Data persistence and serialization
-- Exception handling and error recovery
-- Menu-driven application design
-- List and dictionary operations
-- User input validation
-- Control flow with loops and conditionals
-- Modern Python features (match statement)
-- Code organization with functions
-- Defensive programming practices
-
-## Possible Enhancements
-- Add task categories or tags
-- Implement due dates for tasks
-- Add priority levels (high, medium, low)
-- Search functionality
-- Edit existing tasks
-- Sort tasks by completion status or priority
-- Set reminders or notifications
-- Create a GUI version
-- Add task filtering options
-- Implement undo/redo functionality
 
 ## Bug Fixed
 - **JSONDecodeError**: Added error handling for empty or corrupted JSON files. The application now gracefully handles empty `todo.json` files instead of crashing.
