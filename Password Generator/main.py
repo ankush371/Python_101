@@ -1,5 +1,6 @@
 def password(password_length):
     
+
     import string
     import secrets
    
@@ -12,7 +13,7 @@ def password(password_length):
     all_characters =  uppercase + digits + punctuation + lowercase
     
     
-    password = ''.join(secrets.choice(all_characters[::2]) for _ in range(password_length))
+    password = ''.join(secrets.choice(all_characters) for _ in range(password_length))
     
     return password
 
