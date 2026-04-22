@@ -10,14 +10,6 @@ Guess_the_Number/
 └── README.md    # This file
 ```
 
-## Features
-- **Man vs Machine Gameplay**: Interactive competition between player and AI bot
-- **Smart Bot AI**: Uses binary search algorithm for optimal guessing strategy
-- **Turn-based System**: Alternating turns between human and bot players
-- **Attempt Limit**: 10 turns maximum to guess the number
-- **User Feedback**: Clear feedback on each guess (too high, too low, or correct)
-- **Error Handling**: Validates user input and handles invalid entries
-- **Dramatic Pauses**: Time delays for better game experience and tension building
 
 ## How to Run
 ```bash

@@ -7,11 +7,10 @@ def guess_the_number():
     bot_high = 100
     
     print('Welcome to the Guess the Number Game: Man vs Machine!')
-    print('I have selected a number between 1 and 100.')
-    print('You have 15 attempts to guess the number before the bot does!')
+    print('You have 10 attempts to guess the number before the bot does!')
     
     counter = 0
-    while counter < 15:
+    while counter < 10:
         counter += 1
         print(f'\n----------------------------------- Turn {counter} -----------------------------------')
         
@@ -51,8 +50,8 @@ def guess_the_number():
 
     else:
         # This 'else' belongs to the 'while' loop. It triggers if the loop finishes 
-        # all 15 turns without ever hitting a 'break' statement.
-        print(f'\nGame Over! 15 attempts reached. The number was {number}.')
+        # all 10 turns without ever hitting a 'break' statement.
+        print(f'\nGame Over! 10 attempts reached. The number was {number}.')
 
 if __name__ == '__main__':
     guess_the_number()
