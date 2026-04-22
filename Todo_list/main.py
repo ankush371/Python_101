@@ -1,7 +1,7 @@
 import json
 import os
 
-DATA_FILE = "C:\\Documents\\Desktop\\Main_projects\\sample_project\\Python basic projects\\Todo_list\\todo.json"
+DATA_FILE = "path\\todo.json"
 
 def load_tasks():
     if os.path.exists(DATA_FILE):
