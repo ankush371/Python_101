@@ -6,7 +6,7 @@ if __name__ == '__main__':
             data = json.loads(file.read())
 
         people = data["people"]
-        output = ','.join([*people[0]])
+        output = ','.join([*people[0]])  # joins the keys of the first object to create the header row
         for obj in people:
             output += f'\n{obj["firstName"]},{obj["lastName"]},{obj["gender"]},{obj["age"]},{obj["number"]}'
 

@@ -50,7 +50,7 @@ def madlibs():
         f"touching it, a massive surge of {emotion} washed over them."
     )
         
-      
+    # Randomly select one of the stories to display 
     stories = [story,story_1, story_2, story_3, story_4, story_5]
     final_story = random.choice(stories)  
         

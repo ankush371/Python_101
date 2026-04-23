@@ -3,6 +3,7 @@ import os
 
 DATA_FILE = "path\\todo.json"
 
+# load_tasks() - Reads the tasks from the JSON file and returns them as a list. If the file doesn't exist or is empty, it returns an empty list.
 def load_tasks():
     if os.path.exists(DATA_FILE):
         try:
@@ -12,10 +13,12 @@ def load_tasks():
             return []
     return []
 
+# save_tasks(tasks) - Takes a list of tasks and saves it to the JSON file, overwriting any existing data.
 def save_tasks(tasks):
     with open(DATA_FILE, 'w') as file:
         json.dump(tasks, file, indent=4)
-
+        
+# view_tasks(tasks) - Displays the current list of tasks in a user-friendly format, showing the task number, description, and completion status.        
 def view_tasks(tasks):
     print("\n" + "="*100)
     print("       MY TO-DO LIST")
@@ -24,8 +27,8 @@ def view_tasks(tasks):
     if not tasks:
         print(" Nothing to do! You're all caught up.")
     else:
-        for index, task in enumerate(tasks, start=1):
-            status = "[x]" if task['done'] else "[ ]"
+        for index, task in enumerate(tasks, start=1):   
+            status = "[x]" if task['done'] else "[ ]"      
             print(f" {index}. {status} {task['description']}")
             
     print("="*100 + "\n")
