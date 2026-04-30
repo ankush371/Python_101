@@ -34,7 +34,7 @@ def calculator():
                     result = None
             
             if result is not None:
-                history.append(operation)          # Add the operation to the history list. 
+                history.append(operation)                    # Add the operation to the history list. 
                 print(f"Answer: {result}")                   # Print the result of the current operation.
         
         elif choice == '5':
